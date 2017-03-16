@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - store@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="store">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="dt354"/>
+    <schema id="3" name="dt354jdbc"/>
+    <schema id="4" name="dt354rel"/>
+    <schema id="5" name="fix_flat"/>
+    <schema id="6" name="information_schema"/>
+    <schema id="7" name="itunes"/>
+    <schema id="8" name="mysql"/>
+    <schema id="9" name="performance_schema"/>
+    <schema id="10" name="sakila"/>
+    <schema id="11" name="sys"/>
+    <schema id="12" name="world"/>
+  </database-model>
+</dataSource>
