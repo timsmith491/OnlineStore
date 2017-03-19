@@ -1,12 +1,15 @@
 package entities;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Tim on 15/03/2017.
  */
+@NamedQueries({
+        @NamedQuery(name = "comment.findAll", query = "select o from Comment o")
+})
+
+@Entity
 public class Comment {
 
     @Id
