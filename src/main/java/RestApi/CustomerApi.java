@@ -4,6 +4,7 @@ import dao.CustomerDao;
 import entities.Customer;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/customer")
@@ -20,6 +21,7 @@ public class CustomerApi {
     CustomerDao customerDao = new CustomerDao();
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/all")
     public String findAllCustomers(){
         List<Customer> customers = customerDao.findAllCustomers();
