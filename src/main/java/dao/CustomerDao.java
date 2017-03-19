@@ -3,7 +3,7 @@ package dao;
 import entities.Customer;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUtil;
+import persistence.PersistenceUtil;
 import java.util.List;
 
 /**
@@ -12,7 +12,7 @@ import java.util.List;
 public class CustomerDao {
 
     public void createCustomer(Customer customer){
-//        PersistenceUtil.persist(customer);
+        PersistenceUtil.persist(customer);
     }
 
     public static List<Customer> findAllCustomers() {

@@ -1,16 +1,20 @@
 package entities;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Tim on 15/03/2017.
  */
+
+
 public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @OneToOne
+    private Customer customer;
+
     private int cartId;
     private int itemId;
     private int customerId;
