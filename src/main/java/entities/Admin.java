@@ -1,13 +1,10 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-/**
- * Created by Tim on 19/03/2017.
- */
+@NamedQueries({
+        @NamedQuery(name = "admin.findAll", query = "select o from Admin o")
+})
 
 @Entity
 public class Admin {
