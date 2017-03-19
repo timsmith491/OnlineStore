@@ -5,8 +5,12 @@ import javax.persistence.*;
 /**
  * Created by Tim on 15/03/2017.
  */
+@NamedQueries({
+        @NamedQuery(name = "cart.findAll", query = "select o from Cart o")
+})
 
 
+@Entity
 public class Cart {
 
     @Id
