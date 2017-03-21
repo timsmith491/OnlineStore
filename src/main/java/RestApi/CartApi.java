@@ -1,10 +1,8 @@
 package RestApi;
 
-import dao.AdminDao;
+
 import dao.CartDao;
-import dao.CustomerDao;
 import entities.Cart;
-import entities.Customer;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -18,10 +16,7 @@ public class CartApi {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/all")
-    public
-        List<Cart> findAllCart(){
-        cartDao.findAllCarts();
-
+    public List<Cart> findAllCarts(){
         return cartDao.findAllCarts();
     }
 

@@ -31,7 +31,7 @@
     <!--, RestApi.CartApi, RestApi.CommentApi, RestApi.CustomerApi-->
     <context-param>
         <param-name>resteasy.resources</param-name>
-        <param-value>RestApi.CustomerApi, RestApi.AdminApi, RestApi.CommentApi, RestAPi.CartApi</param-value>
+        <param-value>RestApi.CustomerApi, RestApi.AdminApi, RestApi.CommentApi, RestApi.CartApi, RestApi.ItemApi</param-value>
     </context-param>
 
 

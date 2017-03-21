@@ -1,7 +1,7 @@
 package dao;
 
 
-import entities.Customer;
+
 import entities.Item;
 import persistence.PersistenceUtil;
 
