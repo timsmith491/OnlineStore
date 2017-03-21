@@ -20,23 +20,14 @@ public class AdminApi {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/all")
-    public String findAllAdmins(){
-        List<Admin> admins = adminDao.findAllAdmins();
-        for (Admin a: admins){
-            a.getId();
-            a.getUsernameAdmin();
-            a.getPasswordAdmin();
-        }
-        admins.toString();
-        return "All admins" + admins.toString();
+    public List<Admin> findAllAdmins(){
+       return adminDao.findAllAdmins();
     }
 
     @POST
     @Produces
     @Path("/register")
-    public void addUserpublic(@FormParam("username") String username, @FormParam("password") String password)
-                          {
-
+    public void addUserpublic(@FormParam("username") String username, @FormParam("password") String password) {
 
         Admin admin = new Admin();
 
