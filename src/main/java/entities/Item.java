@@ -1,6 +1,8 @@
 package entities;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Tim on 15/03/2017.
@@ -9,8 +11,9 @@ import javax.persistence.*;
         @NamedQuery(name = "item.findAll", query = "select o from Item o")
 })
 
+@XmlRootElement
 @Entity
-public class Item {
+public class    Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,6 +41,7 @@ public class Item {
         this.rating = rating;
     }
 
+    @XmlElement
     public int getId() {
         return id;
     }
@@ -46,6 +50,7 @@ public class Item {
         this.id = id;
     }
 
+    @XmlElement
     public String getTitle() {
         return title;
     }
@@ -54,6 +59,7 @@ public class Item {
         this.title = title;
     }
 
+    @XmlElement
     public String getManufacturer() {
         return manufacturer;
     }
@@ -62,6 +68,7 @@ public class Item {
         this.manufacturer = manufacturer;
     }
 
+    @XmlElement
     public Double getPrice() {
         return price;
     }
@@ -70,6 +77,7 @@ public class Item {
         this.price = price;
     }
 
+    @XmlElement
     public String getCategory() {
         return category;
     }
@@ -78,6 +86,7 @@ public class Item {
         this.category = category;
     }
 
+    @XmlElement
     public String getImage() {
         return image;
     }
@@ -86,6 +95,7 @@ public class Item {
         this.image = image;
     }
 
+    @XmlElement
     public int getStockLevel() {
         return stockLevel;
     }
@@ -94,6 +104,7 @@ public class Item {
         this.stockLevel = stockLevel;
     }
 
+    @XmlElement
     public int getRating() {
         return rating;
     }

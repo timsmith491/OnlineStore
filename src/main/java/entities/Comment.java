@@ -39,6 +39,7 @@ public class Comment {
         this.id = id;
     }
 
+    @XmlElement
     public String getCustomerName() {
         return customerName;
     }
@@ -47,6 +48,7 @@ public class Comment {
         this.customerName = customerName;
     }
 
+    @XmlElement
     public String getShippingAddress() {
         return shippingAddress;
     }
@@ -55,6 +57,7 @@ public class Comment {
         this.shippingAddress = shippingAddress;
     }
 
+    @XmlElement
     public String getPaymentMethod() {
         return paymentMethod;
     }

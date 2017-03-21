@@ -1,6 +1,8 @@
 package entities;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Tim on 15/03/2017.
@@ -9,7 +11,7 @@ import javax.persistence.*;
         @NamedQuery(name = "cart.findAll", query = "select o from Cart o")
 })
 
-
+@XmlRootElement
 @Entity
 public class Cart {
 
@@ -22,7 +24,7 @@ public class Cart {
 
     }
 
-
+    @XmlElement
     public int getId() {
         return id;
     }

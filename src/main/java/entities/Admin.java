@@ -1,11 +1,14 @@
 package entities;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @NamedQueries({
         @NamedQuery(name = "admin.findAll", query = "select o from Admin o")
 })
 
+@XmlRootElement
 @Entity
 public class Admin {
 
@@ -25,6 +28,7 @@ public class Admin {
         this.passwordAdmin = passwordAdmin;
     }
 
+    @XmlElement
     public int getId() {
         return id;
     }
@@ -33,6 +37,7 @@ public class Admin {
         this.id = adminId;
     }
 
+    @XmlElement
     public String getUsernameAdmin() {
         return usernameAdmin;
     }
@@ -41,6 +46,7 @@ public class Admin {
         this.usernameAdmin = usernameAdmin;
     }
 
+    @XmlElement
     public String getPasswordAdmin() {
         return passwordAdmin;
     }

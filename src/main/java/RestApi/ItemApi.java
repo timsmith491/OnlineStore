@@ -26,10 +26,10 @@ public class ItemApi {
     }
 
 
-    @POST
-    @Produces
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/add")
-    public void addItem(){
+    public String addItem(){
         Item item = new Item();
         item.setTitle("Madone 2.1");
         item.setManufacturer("Trek");
@@ -40,5 +40,6 @@ public class ItemApi {
         item.setRating(5);
 
         itemDao.createItem(item);
+        return "success";
     }
 }
