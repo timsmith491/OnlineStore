@@ -1,6 +1,9 @@
 package entities;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by Tim on 14/03/2017.
@@ -9,15 +12,13 @@ import javax.persistence.*;
         @NamedQuery(name = "customer.findAll", query = "select o from Customer o")
 })
 
+@XmlRootElement
 @Entity
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
-
-
-    private int customerId;
+    private int id;
     private String username;
     private String password;
     private String shippingAddress;
@@ -34,14 +35,16 @@ public class Customer {
         this.paymentMethod = paymentMethod;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    @XmlElement
+    public int getId() {
+        return id;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setId(int id) {
+        this.id = id;
     }
 
+    @XmlElement
     public String getUsername() {
         return username;
     }
@@ -50,6 +53,7 @@ public class Customer {
         this.username = username;
     }
 
+    @XmlElement
     public String getPassword() {
         return password;
     }
@@ -58,6 +62,7 @@ public class Customer {
         this.password = password;
     }
 
+    @XmlElement
     public String getShippingAddress() {
         return shippingAddress;
     }
@@ -66,6 +71,7 @@ public class Customer {
         this.shippingAddress = shippingAddress;
     }
 
+    @XmlElement
     public String getPaymentMethod() {
         return paymentMethod;
     }
@@ -77,7 +83,7 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "customerId=" + customerId +
+                "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", shippingAddress='" + shippingAddress + '\'' +

@@ -11,10 +11,8 @@ public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
-
-
-    private int adminId;
     private String usernameAdmin;
     private String passwordAdmin;
 
@@ -27,12 +25,12 @@ public class Admin {
         this.passwordAdmin = passwordAdmin;
     }
 
-    public int getAdminId() {
-        return adminId;
+    public int getId() {
+        return id;
     }
 
-    public void setAdminId(int adminId) {
-        this.adminId = adminId;
+    public void setId(int adminId) {
+        this.id = adminId;
     }
 
     public String getUsernameAdmin() {
@@ -54,7 +52,7 @@ public class Admin {
     @Override
     public String toString() {
         return "Admin{" +
-                "adminId=" + adminId +
+                "adminId=" + id +
                 ", usernameAdmin='" + usernameAdmin + '\'' +
                 ", passwordAdmin='" + passwordAdmin + '\'' +
                 '}';

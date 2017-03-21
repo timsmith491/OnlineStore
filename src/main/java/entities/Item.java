@@ -14,7 +14,8 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int itemId;
+    private int id;
+
     private String title;
     private String manufacturer;
     private Double price;
@@ -37,12 +38,12 @@ public class Item {
         this.rating = rating;
     }
 
-    public int getItemId() {
-        return itemId;
+    public int getId() {
+        return id;
     }
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -104,7 +105,7 @@ public class Item {
     @Override
     public String toString() {
         return "Item{" +
-                "itemId=" + itemId +
+                "itemId=" + id +
                 ", title='" + title + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", price=" + price +

@@ -1,0 +1,20 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "1.5.8",
+    "angular-animate": "1.5.8",
+    "angular-chart.js": "^1.0.3",
+    "angular-route": "1.5.8",
+    "angular-sanitize": "1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7"
+  }
+}

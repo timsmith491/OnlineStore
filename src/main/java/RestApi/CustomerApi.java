@@ -23,17 +23,9 @@ public class CustomerApi {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/all")
-    public String findAllCustomers(){
-        List<Customer> customers = customerDao.findAllCustomers();
-        for (Customer c: customers){
-            c.getCustomerId();
-            c.getUsername();
-            c.getPassword();
-            c.getShippingAddress();
-            c.getPaymentMethod();
-        }
-        customers.toString();
-        return "All customers" + customers.toString();
+    public List<Customer> findAllCustomers(){
+
+        return customerDao.findAllCustomers();
     }
 
     @POST

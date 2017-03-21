@@ -23,7 +23,7 @@ public class AdminApi {
     public String findAllAdmins(){
         List<Admin> admins = adminDao.findAllAdmins();
         for (Admin a: admins){
-            a.getAdminId();
+            a.getId();
             a.getUsernameAdmin();
             a.getPasswordAdmin();
         }

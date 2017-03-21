@@ -28,10 +28,10 @@
 
 
     BELOW ADD EVERY API FOLLOWED BY A COMMA-->
-    <!---->
+    <!--, RestApi.CartApi, RestApi.CommentApi, RestApi.CustomerApi-->
     <context-param>
         <param-name>resteasy.resources</param-name>
-        <param-value>RestApi.CustomerApi</param-value>
+        <param-value>RestApi.CustomerApi, RestApi.AdminApi, RestApi.CommentApi</param-value>
     </context-param>
 
 

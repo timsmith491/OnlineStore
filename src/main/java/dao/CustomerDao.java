@@ -16,7 +16,7 @@ public class CustomerDao {
     }
 
     public static List<Customer> findAllCustomers() {
-        EntityManager em = persistence.PersistenceUtil.createEM();
+        EntityManager em = PersistenceUtil.createEM();
         List<Customer> customers = (List<Customer>)
                 em.createNamedQuery("customer.findAll").getResultList();
         em.close();

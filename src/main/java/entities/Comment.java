@@ -1,20 +1,21 @@
 package entities;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- * Created by Tim on 15/03/2017.
- */
 @NamedQueries({
         @NamedQuery(name = "comment.findAll", query = "select o from Comment o")
 })
 
+@XmlRootElement
 @Entity
 public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int commentId;
+    private int id;
+
     private String customerName;
     private String shippingAddress;
     private String paymentMethod;
@@ -29,12 +30,13 @@ public class Comment {
         this.paymentMethod = paymentMethod;
     }
 
-    public int getCommentId() {
-        return commentId;
+    @XmlElement
+    public int getId() {
+        return id;
     }
 
-    public void setCommentId(int commentId) {
-        this.commentId = commentId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCustomerName() {
@@ -64,7 +66,7 @@ public class Comment {
     @Override
     public String toString() {
         return "Comment{" +
-                "commentId=" + commentId +
+                "id=" + id +
                 ", customerName='" + customerName + '\'' +
                 ", shippingAddress='" + shippingAddress + '\'' +
                 ", paymentMethod='" + paymentMethod + '\'' +
