@@ -18,16 +18,11 @@ public class CartApi {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/all")
-    public String findAllCarts(){
-        List<Cart> carts = cartDao.findAllCarts();
-        for (Cart c: carts){
-            c.getId();
-            c.getId();
-//            c.getItemId();
+    public
+        List<Cart> findAllCart(){
+        cartDao.findAllCarts();
 
-        }
-        carts.toString();
-        return "All carts" + carts.toString();
+        return cartDao.findAllCarts();
     }
 
     @POST
