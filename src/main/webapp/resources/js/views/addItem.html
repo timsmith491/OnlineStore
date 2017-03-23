@@ -1,0 +1,50 @@
+<ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <!--Naked Form-->
+            <div class="well">
+                <!--Body-->
+                <div class="md-form">
+                    <i class="fa fa-user prefix"></i>
+                    <input type="text" id="form1" class="form-control" ng-model="item.title">
+                    <label for="form1">Product Name</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix"></i>
+                    <input type="text" id="form2" class="form-control" ng-model="item.manufacturer">
+                    <label for="form2">Manufacturer</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-tag prefix"></i>
+                    <input type="text" id="form4" class="form-control" ng-model="item.price">
+                    <label for="form4">Price</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-pencil prefix"></i>
+                    <input type="text" id="form3" class="form-control" ng-model="item.category">
+                    <label for="form3">Category</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-pencil prefix"></i>
+                    <input type="text" id="form8" class="form-control" ng-model="item.image">
+                    <label for="form8">Image</label>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-default" ng-click="addItem()">Submit</button>
+                </div>
+            </div>
+
+        </div>
+        <!--Naked Form-->
+    </div>
+</div>
+
+    <h1>You entered: {{title}}</h1>
+
+</ul>

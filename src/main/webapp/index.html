@@ -4,25 +4,38 @@
     <meta charset="UTF-8">
     <title>Online Store</title>
 
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
     <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-    <link type="text/css" rel="stylesheet" src="node_modules/bootstrap/dist/css/bootstrap.css" />
     <script type="text/javascript" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css" />
     <script src="resources/js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/js/style.css">
     <script src="resources/js/controllers/LoginController.js"></script>
-
-    <div class="container">
-        <nav class="navbar fixed-top navbar-light bg-faded">
-            <a class="navbar-brand" href="#">Header</a>
-        </nav>
-    </div>
-
+    <script src="resources/js/controllers/ItemController.js"></script>
+    <script src="resources/js/controllers/AddItemController.js"></script>
 </head>
 <body>
-MAIN INDEX
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">OnlineStore</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Cart</a></li>
+        </ul>
+    </div>
+</nav>
+
+
 <ui-view></ui-view>
 </body>
 </html>
