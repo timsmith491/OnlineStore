@@ -1,10 +1,13 @@
 package RestApi;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.CustomerDao;
 import entities.Customer;
+import entities.Item;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.io.IOException;
 import java.util.List;
 
 @Path("/customer")
@@ -29,24 +32,28 @@ public class CustomerApi {
     }
 
     @POST
-    @Produces
-    @Path("/register")
-    public void addUserpublic(@FormParam("username") String username, @FormParam("password") String password,
-                              @FormParam("shippingAddress") String shippingAddress, @FormParam("paymentMethod") String paymentMethod){
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("addItem")
+    public Customer addCustomer(String customerJson ) {
+        Customer customer = null;
+        try {
+            customer = mapCustomer(customerJson);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-
-//    public void post(String data) {
-        Customer customer = new Customer();
-//        user.setUsername("tim");
-//        user.setPassword("password");
-
-        customer.setUsername(username);
-        customer.setPassword(password);
-        customer.setShippingAddress(shippingAddress);
-        customer.setPaymentMethod(paymentMethod);
+        //Should form values be taken as strings for all??
         customerDao.createCustomer(customer);
-//        System.out.println(data);
-//        return user;
+        return customer;
+    }
+
+
+    private Customer mapCustomer(String customerJson) throws IOException {
+        Customer customer = null;
+        customer = new ObjectMapper().readValue(customerJson, Customer.class);
+
+        return customer;
+
     }
 
 }
