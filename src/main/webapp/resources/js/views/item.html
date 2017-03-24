@@ -1,38 +1,42 @@
 <div class="container">
     <div class="row ">
-        <div class="joke" >
-        <div class="col-md-4 card card-cascade narrower" ng-repeat="item in allItems">
-            <div class="view overlay hm-white-slight">
-                <img ng-src="{{item.item.image}}" class="img-fluid" alt="" width="200" height="200" >
-                <a>
-                    <div class="mask waves-effect waves-light"></div>
-                </a>
-            </div>
-            <div class="card-block text-center">
-                <!--Category & Title-->
-                <a href="" class="text-muted"><h5> {{item.item.manufacturer}}</h5></a>
-                <h4 class="card-title"><strong><a href="">Category</a></strong></h4>
-                <!--Rating-->
-                <ul class="rating">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star-o"></i></li>
-                </ul>
-                <!--Description-->
-                <p class="card-text">
-                </p>
-                <!--Card footer-->
-                <div class="card-footer">
-                    <span class="left">49$</span>
-                    <span class="right">
-                        <a data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+       <div>
+            <div class="col-md-4 card card-cascade narrower" ng-repeat="item in allItems">
+                <div class="view overlay hm-white-slight">
+                    <img ng-src="{{item.item.image}}" class="img-fluid" alt=""  width="200" height="200" >
+                    <a>
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>
+                <div class="card-block text-center">
+                    <!--Category & Title-->
+                    <a href="" class="text-muted"><h5> {{item.item.title}}</h5></a>
+                    <a href="" class="text-muted"><h5> {{item.item.manufacturer}}</h5></a>
+                    <h4 class="card-title"><strong><a href="">{{item.item.category}}</a></strong></h4>
+                    <!--Rating-->
+                    <ul class="rating">
+                        <div class="rating">
+                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                        </div>
+                        {{item.item.rating}}
+                        <div class="rating">
+                            <span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span>
+                        </div>
+                    </ul>
+                    <!--Description-->
+                    <p class="card-text">
+                    </p>
+                    <!--Card footer-->
+                    <div class="card-footer">
+                        <span class="left">€{{item.item.price}}</span>
+                        <span class="right">
+                        <a data-toggle="tooltip" data-placement="top" title="Add to Cart">{{item.item.stockLevel}}<i class="fa fa-shopping-cart"></i></a>
                         <a data-toggle="tooltip" data-placement="top" title="Share"><i class="fa fa-share-alt"></i></a>
                         <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist"><i class="fa fa-heart"></i></a>
                       </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div></div>
+</div>
