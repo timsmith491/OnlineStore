@@ -2,7 +2,6 @@ package RestApi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.ItemDao;
-import entities.Customer;
 import entities.Item;
 
 import javax.ws.rs.*;

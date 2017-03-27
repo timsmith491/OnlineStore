@@ -3,7 +3,6 @@ package RestApi;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.CustomerDao;
 import entities.Customer;
-import entities.Item;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -13,6 +12,7 @@ import java.util.List;
 @Path("/customer")
 public class CustomerApi {
 
+    CustomerDao customerDao = new CustomerDao();
 
     @GET
     @Path(value = "/hello")
@@ -21,7 +21,7 @@ public class CustomerApi {
         return "Hello";
     }
 
-    CustomerDao customerDao = new CustomerDao();
+
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -33,8 +33,8 @@ public class CustomerApi {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("addItem")
-    public Customer addCustomer(String customerJson ) {
+    @Path("addCustomer")
+    public Customer addCustomer(String customerJson) {
         Customer customer = null;
         try {
             customer = mapCustomer(customerJson);

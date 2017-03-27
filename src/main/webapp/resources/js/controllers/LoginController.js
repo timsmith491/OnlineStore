@@ -1,19 +1,35 @@
 angular.module('OnlineStoreApp.LoginController', [])
-    .controller('LoginController', function ($scope, $http) {
-        $scope.name = "Tim";
+    .controller('LoginController', function ($scope, $http, $state) {
+        $scope.customer ={};
 
-        $http.get('restful-services/customer/all')
-            .success(function (data, status) {
-                if(status == 200){
-                    $scope.allCustomers = data;
-                    console.log($scope.allCustomers, "All my customers");
-                }
-            }).error(function (error) {
+        $scope.addCustomer = function () {
+
+            console.log($scope.customer, "customersFromForm");
+
+            $http.post('restful-services/customer/addCustomer', JSON.stringify($scope.customer))
+                .success(function (data, status) {
+                    if (status == 200) {
+                        $scope.customer = data;
+                        console.log($scope.customer, "Added customer");
+                        $state.go("items");
+                    }
+                }).error(function (error) {
                 alert("FIX ME!!!");
             });
+        }
     });
 
-
+//
+// $http.get('restful-services/customer/all')
+//     .success(function (data, status) {
+//         if(status == 200){
+//             $scope.allCustomers = data;
+//             console.log($scope.allCustomers, "All my customers");
+//         }
+//     }).error(function (error) {
+//     alert("FIX ME!!!");
+// });
+// });
 
 
 $(function() {

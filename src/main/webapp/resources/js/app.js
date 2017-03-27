@@ -8,12 +8,12 @@ angular.module('OnlineStoreApp',[
 ]).config(function ($stateProvider, $urlRouterProvider) {
 
     // $urlRouterProvider.otherwise("/account/login");
-    $urlRouterProvider.otherwise("/item/add");
+    $urlRouterProvider.otherwise("/customer/add");
 
 
     $stateProvider
         .state('login',{
-            url: "/account/login",
+            url: "/customer/add",
             templateUrl: "resources/js/views/login.html",
             controller: 'LoginController'
         })
