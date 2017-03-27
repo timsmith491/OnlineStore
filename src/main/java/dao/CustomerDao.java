@@ -16,11 +16,26 @@ public class CustomerDao {
     }
 
     public static List<Customer> findAllCustomers() {
-        EntityManager em = persistence.PersistenceUtil.createEM();
+        EntityManager em = PersistenceUtil.createEM();
         List<Customer> customers = (List<Customer>)
-                em.createNamedQuery("customer.findAll").getResultList();
+                em.createNamedQuery("Customer.findAll").getResultList();
         em.close();
 
         return customers;
+    }
+
+    public Customer findByUserName(String username) {
+        EntityManager em = PersistenceUtil.createEM();
+        List<Customer> customers = (List<Customer>)
+                em.createNamedQuery("Customer.findByUsername").setParameter("username", username).getResultList();
+
+        em.close();
+        if(customers.size() > 0 ){
+            return customers.get(0);
+        }
+        else{
+            return null;
+        }
+
     }
 }

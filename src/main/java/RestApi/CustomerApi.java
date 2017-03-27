@@ -33,7 +33,7 @@ public class CustomerApi {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("addCustomer")
+    @Path("/addCustomer")
     public Customer addCustomer(String customerJson) {
         Customer customer = null;
         try {
@@ -45,6 +45,26 @@ public class CustomerApi {
         //Should form values be taken as strings for all??
         customerDao.createCustomer(customer);
         return customer;
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/loginCustomer")
+    public Customer loginCustomer(String customerJson){
+        Customer customer = null;
+        try {
+            customer = mapCustomer(customerJson);//Same as the addCustomer??
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        assert customer != null;
+        Customer c =customerDao.findByUserName(customer.getUsername());
+        if(customer.getPassword().equals(c.getPassword()))
+            return customer;
+        else
+            return null;
     }
 
 

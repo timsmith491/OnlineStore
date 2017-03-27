@@ -5,8 +5,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.io.Serializable;
-import java.util.List;
-import entities.Customer;
 
 public class PersistenceUtil implements Serializable {
 

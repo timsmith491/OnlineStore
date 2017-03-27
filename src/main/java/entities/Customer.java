@@ -9,7 +9,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  * Created by Tim on 14/03/2017.
  */
 @NamedQueries({
-        @NamedQuery(name = "customer.findAll", query = "select o from Customer o")
+        @NamedQuery(name = "Customer.findAll", query = "select o from Customer o"),
+        @NamedQuery(name = "Customer.findByUsername", query = "select o from Customer o where o.username=:username"),
 })
 
 @XmlRootElement

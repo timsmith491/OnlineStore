@@ -17,7 +17,26 @@ angular.module('OnlineStoreApp.LoginController', [])
                 alert("FIX ME!!!");
             });
         }
+
+        $scope.loginCustomer = function () {
+
+            console.log($scope.customer, "loginFromForm");
+
+            $http.post('restful-services/customer/loginCustomer', JSON.stringify($scope.customer))
+                .success(function (data, status) {
+                    if (status == 200) {
+                        $scope.customer = data;
+                        console.log($scope.customer, "Logged in customer");
+                        $state.go("items");
+                    }
+                }).error(function (error) {
+                alert("FIX ME!!!");
+            });
+        }
     });
+
+
+
 
 //
 // $http.get('restful-services/customer/all')
