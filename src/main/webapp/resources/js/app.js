@@ -26,6 +26,11 @@ angular.module('OnlineStoreApp',[
             url: "/item/add",
             templateUrl:"resources/js/views/addItem.html",
             controller: 'AddItemController'
-        });
+        })
+        .state('itemView',{
+            url: "/item/view",
+            templateUrl:"resources/js/views/viewItem.html",
+            controller: 'ViewProductController'
+    });
 
 });
