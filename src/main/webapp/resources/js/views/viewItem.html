@@ -1,7 +1,6 @@
 <div class="container">
-    <div class="row ">
         <div>
-            <div class="col-md-4 card card-cascade narrower">
+            <div class="col-md-6 card card-cascade narrower">
                 <div class="view overlay hm-white-slight">
                     <img ng-src="{{item.item.image}}" class="img-fluid" alt=""  width="200" height="200" >
                     <a>
@@ -13,6 +12,8 @@
                     <a href="" class="text-muted"><h5> {{item.item.title}}</h5></a>
                     <a href="" class="text-muted"><h5> {{item.item.manufacturer}}</h5></a>
                     <h4 class="card-title"><strong><a href="">{{item.item.category}}</a></strong></h4>
+                    <h4 class="card-title"><strong><a href="">€{{item.item.price}}</a></strong></h4>
+                    <a data-toggle="tooltip" data-placement="top" title="Add to Cart">{{item.item.stockLevel}}<i class="fa fa-shopping-cart"></i></a>
                     <!--Rating-->
                     <ul class="rating">
                         <div class="rating">
@@ -28,16 +29,12 @@
                     </p>
                     <!--Card footer-->
                     <div class="card-footer">
-                        <span class="left">€{{item.item.price}}</span>
-                        <span class="right">
-                        <a data-toggle="tooltip" data-placement="top" title="Add to Cart">{{item.item.stockLevel}}<i class="fa fa-shopping-cart"></i></a>
-                        <a data-toggle="tooltip" data-placement="top" title="Share"><i class="fa fa-share-alt"></i></a>
-                        <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist"><i class="fa fa-heart"></i></a>
-                            <button ng-click="details(item)" >Click for details</button>
+                        <span class="center">
+
+                            <button ng-click="details(item)" >Add to Basket</button>
                       </span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
