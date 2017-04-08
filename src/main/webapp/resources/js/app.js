@@ -4,7 +4,9 @@ angular.module('OnlineStoreApp',[
     'OnlineStoreApp.LoginController',
     'OnlineStoreApp.ItemController',
     'OnlineStoreApp.AddItemController',
-    'OnlineStoreApp.ViewProductController'
+    'OnlineStoreApp.ViewProductController',
+    'OnlineStoreApp.BasketController'
+
 
 
 ]).config(function ($stateProvider, $urlRouterProvider) {
@@ -33,6 +35,11 @@ angular.module('OnlineStoreApp',[
             url: "/item/view/:itemId",
             templateUrl:"resources/js/views/viewItem.html",
             controller: 'ViewProductController'
+        })
+         .state('basket',{
+            url: "/basket",
+            templateUrl:"resources/js/views/basket.html",
+            controller: 'BasketController'
         });
 
 });
