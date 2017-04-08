@@ -8,7 +8,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  * Created by Tim on 15/03/2017.
  */
 @NamedQueries({
-        @NamedQuery(name = "item.findAll", query = "select o from Item o")
+        @NamedQuery(name = "Item.findAll", query = "select o from Item o"),
+        @NamedQuery(name = "Item.findById", query = "select o from Item o where o.id=:id"),
 })
 
 @XmlRootElement

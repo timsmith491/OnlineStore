@@ -2,6 +2,7 @@ package RestApi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.ItemDao;
+import entities.Customer;
 import entities.Item;
 
 import javax.ws.rs.*;
@@ -24,23 +25,18 @@ public class ItemApi {
     }
 
 
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("/add")
-//    public String addItem(){
-//        Item item = new Item();
-//        item.setTitle("Madone 2.1");
-//        item.setManufacturer("Trek");
-//        item.setPrice(1600.00);
-//        item.setCategory("Road");
-//        item.setImage("No Image");
-//        item.setStockLevel(10);
-//        item.setRating(5);
-//
-//        itemDao.createItem(item);
-//        return "success";
-//
-//    }
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/findItemById")
+    public Item findItemById(String itemId){
+        Item item = itemDao.findById(Integer.parseInt(itemId));
+
+
+
+        assert item != null;
+        return item;
+    }
+
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)

@@ -3,7 +3,9 @@ angular.module('OnlineStoreApp',[
     'ui.router',
     'OnlineStoreApp.LoginController',
     'OnlineStoreApp.ItemController',
-    'OnlineStoreApp.AddItemController'
+    'OnlineStoreApp.AddItemController',
+    'OnlineStoreApp.ViewProductController'
+
 
 ]).config(function ($stateProvider, $urlRouterProvider) {
 
@@ -28,9 +30,9 @@ angular.module('OnlineStoreApp',[
             controller: 'AddItemController'
         })
         .state('itemView',{
-            url: "/item/view",
+            url: "/item/view/:itemId",
             templateUrl:"resources/js/views/viewItem.html",
             controller: 'ViewProductController'
-    });
+        });
 
 });
