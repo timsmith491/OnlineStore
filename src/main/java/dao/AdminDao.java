@@ -23,4 +23,19 @@ public class AdminDao {
 
         return admins;
     }
+
+    public Admin findByUserName(String username) {
+        EntityManager em = PersistenceUtil.createEM();
+        List<Admin> admins = (List<Admin>)
+                em.createNamedQuery("admin.findByUsername").setParameter("usernameAdmin", username).getResultList();
+
+        em.close();
+        if(admins.size() > 0 ){
+            return admins.get(0);
+        }
+        else{
+            return null;
+        }
+
+    }
 }

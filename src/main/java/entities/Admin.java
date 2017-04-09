@@ -5,7 +5,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @NamedQueries({
-        @NamedQuery(name = "admin.findAll", query = "select o from Admin o")
+        @NamedQuery(name = "admin.findAll", query = "select o from Admin o"),
+        @NamedQuery(name = "admin.findByUsername", query = "select o from Admin o where o.usernameAdmin=:usernameAdmin"),
 })
 
 @XmlRootElement

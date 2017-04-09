@@ -5,7 +5,9 @@ angular.module('OnlineStoreApp',[
     'OnlineStoreApp.ItemController',
     'OnlineStoreApp.AddItemController',
     'OnlineStoreApp.ViewProductController',
-    'OnlineStoreApp.BasketController'
+    'OnlineStoreApp.BasketController',
+    'OnlineStoreApp.AdminLoginController'
+
 
 
 
