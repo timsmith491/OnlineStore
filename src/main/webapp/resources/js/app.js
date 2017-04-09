@@ -40,6 +40,11 @@ angular.module('OnlineStoreApp',[
             url: "/basket",
             templateUrl:"resources/js/views/basket.html",
             controller: 'BasketController'
+        })
+         .state('adminLogin',{
+            url: "/admin/add",
+            templateUrl:"resources/js/views/adminLogin.html",
+            controller: 'AdminLoginController'
         });
 
 });
