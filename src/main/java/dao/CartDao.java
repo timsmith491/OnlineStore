@@ -1,7 +1,7 @@
 package dao;
 
 
-import entities.Cart;
+import entities.CartItem;
 
 import persistence.PersistenceUtil;
 
@@ -9,16 +9,18 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 public class CartDao {
-    public void createCart(Cart cart){
+    public void createCart(CartItem cart){
         PersistenceUtil.persist(cart);
     }
 
-    public static List<Cart> findAllCarts() {
+    public static List<CartItem> findAllCarts() {
         EntityManager em = persistence.PersistenceUtil.createEM();
-        List<Cart> carts = (List<Cart>)
-                em.createNamedQuery("cart.findAll").getResultList();
+        List<CartItem> carts = (List<CartItem>)
+                em.createNamedQuery("cartItem.findAll").getResultList();
         em.close();
 
         return carts;
     }
+
+
 }
