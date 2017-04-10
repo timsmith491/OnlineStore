@@ -1,5 +1,5 @@
 angular.module('OnlineStoreApp.ViewProductController', [])
-    .controller('ViewProductController', function ($scope, $http, $stateParams) {
+    .controller('ViewProductController', function ($scope, $http, $stateParams, $state) {
 
         var itemId = $stateParams.itemId;
         console.log(itemId, "Id");
@@ -13,5 +13,13 @@ angular.module('OnlineStoreApp.ViewProductController', [])
             }).error(function (error) {
             alert("FIX ME!!!");
         });
+
+        $scope.addItem = function (item) {
+            console.log(item.item, "item displayed");
+
+            $state.go("basket", {
+                itemId: item.item.id
+            });
+        }
 
     });
