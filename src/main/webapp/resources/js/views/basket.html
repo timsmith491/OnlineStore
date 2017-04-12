@@ -21,9 +21,8 @@
         <tbody>
 
         <!--First row-->
-        <tr ng-repeat="item in allCartItems">
+        <tr ng-repeat="item in allCartItems"  ng-if="item.cartItem.paid == false">
             <th scope="row">
-
                 <img ng-src="{{item.cartItem.item.image}}" alt="" class="img-fluid"style="width:150px;height:150px;" >
             </th>
             <td>
