@@ -16,18 +16,25 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String customerName;
-    private String shippingAddress;
-    private String paymentMethod;
+    private Long comment;
+    private int rating;
+
+    @ManyToOne
+    private Customer customer;
+
+    @ManyToOne
+    private Item item;
+
 
     public Comment(){
 
     }
 
-    public Comment(String customerName, String shippingAddress, String paymentMethod) {
-        this.customerName = customerName;
-        this.shippingAddress = shippingAddress;
-        this.paymentMethod = paymentMethod;
+    public Comment(Long comment, int rating, Customer customer, Item item) {
+        this.comment = comment;
+        this.rating = rating;
+        this.customer = customer;
+        this.item = item;
     }
 
     @XmlElement
@@ -40,39 +47,49 @@ public class Comment {
     }
 
     @XmlElement
-    public String getCustomerName() {
-        return customerName;
+    public Long getComment() {
+        return comment;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    @XmlElement
-    public String getShippingAddress() {
-        return shippingAddress;
-    }
-
-    public void setShippingAddress(String shippingAddress) {
-        this.shippingAddress = shippingAddress;
+    public void setComment(Long comment) {
+        this.comment = comment;
     }
 
     @XmlElement
-    public String getPaymentMethod() {
-        return paymentMethod;
+    public int getRating() {
+        return rating;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    @XmlElement
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    @XmlElement
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     @Override
     public String toString() {
         return "Comment{" +
                 "id=" + id +
-                ", customerName='" + customerName + '\'' +
-                ", shippingAddress='" + shippingAddress + '\'' +
-                ", paymentMethod='" + paymentMethod + '\'' +
+                ", comment=" + comment +
+                ", rating=" + rating +
+                ", customer=" + customer +
+                ", item=" + item +
                 '}';
     }
 }
