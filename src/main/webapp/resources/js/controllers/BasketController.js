@@ -23,9 +23,26 @@ angular.module('OnlineStoreApp.BasketController', [])
                 }).error(function (error) {
                 alert("FIX ME!!!");
             });
-        }
+        };
 
         $scope.completePurchase = function () {
+
+            console.log($scope.item, "Purchase made");
+            var payForThis = [];
+            for(var i =0; i< $scope.allCartItems.length;i++){
+                payForThis.push($scope.allCartItems[i].cartItem);
+            }
+            $http.post('restful-services/cart/purchaseAllCartItem', JSON.stringify(payForThis))
+            .success(function (data, status) {
+                if (status == 200) {
+                    $scope.addCartItem = data;
+                    console.log($scope.addCartItem, "Cart Items Purchased");
+                }
+            }).error(function (error) {
+                alert("FIX ME!!!");
+
+            });
+
 
             $state.go("items");
         }

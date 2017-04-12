@@ -13,6 +13,10 @@ public class CartDao {
         PersistenceUtil.persist(cart);
     }
 
+    public void mergeCart(CartItem cart){
+        PersistenceUtil.merge(cart);
+    }
+
     public static List<CartItem> findAllCarts() {
         EntityManager em = persistence.PersistenceUtil.createEM();
         List<CartItem> carts = (List<CartItem>)
