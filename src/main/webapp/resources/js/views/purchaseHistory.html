@@ -1,0 +1,69 @@
+
+<!--Shopping CartItem table-->
+<div class="table-responsive">
+    <table class="table product-table">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th></th>
+            <th>Product</th>
+            <th>Manufacturer</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>QTY</th>
+            <th>Amount</th>
+            <th></th>
+        </tr>
+        </thead>
+        <!--/Table head-->
+
+        <!--Table body-->
+        <tbody>
+
+        <!--First row-->
+        <tr ng-repeat="item in allCartItems"  ng-if="item.cartItem.paid == true">
+            <th scope="row">
+                <img ng-src="{{item.cartItem.item.image}}" alt="" class="img-fluid"style="width:150px;height:150px;" >
+            </th>
+            <td>
+                <h5><strong>Title: {{item.cartItem.item.title}}</strong></h5>
+                <p class="text-muted">by Tim</p>
+            </td>
+            <td>{{item.cartItem.item.manufacturer}}</td>
+            <td>{{item.cartItem.item.category}}</td>
+            <td>€{{item.cartItem.item.price}}</td>
+            <td>
+                <span class="qty">{{item.cartItem.item.stockLevel}} </span>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-sm btn-primary btn-rounded">
+                        <input type="radio" name="options" id="option1">&mdash;
+                    </label>
+                    <label class="btn btn-sm btn-primary btn-rounded">
+                        <input type="radio" name="options" id="option2">+
+                    </label>
+                </div>
+            </td>
+            <td>200 $</td>
+            <td>
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Remove item">X
+                </button>
+            </td>
+        </tr>
+        <!--/First row-->
+
+
+        <!--Fourth row-->
+        <tr>
+            <td colspan="3"></td>
+            <td>
+                <h4><strong></strong></h4></td>
+            <td>
+                <h4><strong></strong></h4></td>
+            <td colspan="3"><button ng-click="completePurchase(item)" type="button" class="btn btn-primary">Return home  <i class="fa fa-angle-right right"></i></button></td>
+        </tr>
+        <!--/Fourth row-->
+
+        </tbody>
+        <!--/Table body-->
+    </table>
+</div>

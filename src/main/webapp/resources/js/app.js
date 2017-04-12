@@ -47,6 +47,11 @@ angular.module('OnlineStoreApp',[
             url: "/admin/add",
             templateUrl:"resources/js/views/adminLogin.html",
             controller: 'AdminLoginController'
-        });
+        })
+        .state('purchaseHistory',{
+        url: "/purchase/history",
+        templateUrl:"resources/js/views/purchaseHistory.html",
+        controller: 'BasketController'
+    });
 
 });
