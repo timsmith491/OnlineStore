@@ -24,10 +24,8 @@ public class CartItem {
     @ManyToOne
     private Customer customer;
 
-//    @ManyToMany
-//    private Item item;///////////////////////////////////////////////////Update
-
-
+    @ManyToOne
+    private Item item;
 
     public CartItem() {
 
@@ -37,8 +35,11 @@ public class CartItem {
         this.paid = paid;
         this.quantity = quantity;
         this.customer = customer;
-       // this.item = item;
+        this.item = item;
     }
+
+
+
 
     @XmlElement
     public int getId() {
@@ -63,8 +64,28 @@ public class CartItem {
         return quantity;
     }
 
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @XmlElement
+    public Customer getCustomer() {
+        return customer;
+    }
+
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    @XmlElement
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     @Override
@@ -73,6 +94,8 @@ public class CartItem {
                 "id=" + id +
                 ", paid=" + paid +
                 ", quantity=" + quantity +
+                ", customer=" + customer +
+                ", item=" + item +
                 '}';
     }
 }

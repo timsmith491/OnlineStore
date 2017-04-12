@@ -17,9 +17,28 @@ angular.module('OnlineStoreApp.ViewProductController', [])
         $scope.addItem = function (item) {
             console.log(item.item, "item displayed");
 
-            $state.go("basket", {
-                itemId: item.item.id
+            let cartItem = {};
+            cartItem.paid = false;
+            cartItem.quantity = 1;
+            let customer = {};
+            customer.id = 1;
+            cartItem.customer = customer;
+            cartItem.item = item.item;
+
+
+
+            $http.post('restful-services/cart/addCartItem', cartItem).then(function (response) {
+                console.log(response);
+
+                $state.go("basket", {
+                    itemId: item.item.id
+                });
             });
+
+
+
+
+
         }
 
     });
