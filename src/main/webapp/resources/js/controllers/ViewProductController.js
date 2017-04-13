@@ -1,6 +1,9 @@
 angular.module('OnlineStoreApp.ViewProductController', [])
     .controller('ViewProductController', function ($scope, $http, $stateParams, $state) {
 
+
+        $scope.review = {};
+
         var itemId = $stateParams.itemId;
         console.log(itemId, "Id");
 
@@ -26,19 +29,30 @@ angular.module('OnlineStoreApp.ViewProductController', [])
             cartItem.item = item.item;
 
 
-
             $http.post('restful-services/cart/addCartItem', cartItem).then(function (response) {
                 console.log(response);
 
                 $state.go("basket", {
                     itemId: item.item.id
                 });
+            })
+        };
+
+        $scope.addComment = function () {
+
+            console.log($scope.review, "reviewsFromForm");
+
+
+            $http.post('restful-services/comment/addComment', JSON.stringify($scope.review))
+                .success(function (data, status) {
+                    if (status == 200) {
+                        $scope.addComment = data;
+                        console.log($scope.addComment, "Review added");
+                    }
+                }).error(function (error) {
+                alert("FIX ME!!!");
             });
+        };
 
-
-
-
-
-        }
 
     });

@@ -16,7 +16,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private Long comment;
+    private String comment;
     private int rating;
 
     @ManyToOne
@@ -30,7 +30,7 @@ public class Comment {
 
     }
 
-    public Comment(Long comment, int rating, Customer customer, Item item) {
+    public Comment(String comment, int rating, Customer customer, Item item) {
         this.comment = comment;
         this.rating = rating;
         this.customer = customer;
@@ -47,11 +47,11 @@ public class Comment {
     }
 
     @XmlElement
-    public Long getComment() {
+    public String getComment() {
         return comment;
     }
 
-    public void setComment(Long comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 
