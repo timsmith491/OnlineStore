@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.AdminDao;
 import dao.CustomerDao;
 import entities.Admin;
+import entities.CartItem;
 import entities.Customer;
 
 import javax.ws.rs.*;
@@ -16,9 +17,8 @@ import java.util.List;
 public class AdminApi {
 
 
-//    CustomerDao customerDao = new CustomerDao();
-     AdminDao adminDao = new AdminDao();
-//    private AdminApi(){}
+//     AdminDao adminDao = new AdminDao();
+    AdminDao adminDao = AdminDao.getInstance();
 
 
     @GET
@@ -33,7 +33,8 @@ public class AdminApi {
     @Path("/addAdmin")
     public Admin addAdmin(String adminJson) {
 
-        Admin admin = Admin.getInstance();
+        Admin admin = null;
+
 
         try {
             admin = mapAdmin(adminJson);
