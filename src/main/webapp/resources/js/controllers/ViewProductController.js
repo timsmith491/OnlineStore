@@ -54,5 +54,14 @@ angular.module('OnlineStoreApp.ViewProductController', [])
             });
         };
 
+        $http.get('restful-services/comment/all')
+            .success(function (data, status) {
+                if (status == 200) {
+                    $scope.allComments = data;
+                    console.log($scope.allComments, "All comments");
+                }
+            }).error(function (error) {
+            alert("FIX ME!!!");
+        });
 
     });
