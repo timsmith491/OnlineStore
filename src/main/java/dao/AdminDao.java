@@ -2,6 +2,7 @@ package dao;
 
 import entities.Admin;
 import entities.Customer;
+import interfaces.AdminDaoInterface;
 import persistence.PersistenceUtil;
 
 import javax.persistence.EntityManager;
@@ -10,7 +11,7 @@ import java.util.List;
 /**
  * Created by Tim on 19/03/2017.
  */
-public class AdminDao {
+public class AdminDao implements AdminDaoInterface{
 
     private static AdminDao instance = new AdminDao();
 
@@ -25,7 +26,7 @@ public class AdminDao {
         PersistenceUtil.persist(admin);
     }
 
-    public static List<Admin> findAllAdmins() {
+    public List<Admin> findAllAdmins() {
         EntityManager em = persistence.PersistenceUtil.createEM();
         List<Admin> admins = (List<Admin>)
                 em.createNamedQuery("admin.findAll").getResultList();

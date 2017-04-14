@@ -4,18 +4,19 @@ package dao;
 
 import entities.Customer;
 import entities.Item;
+import interfaces.ItemDaoInterface;
 import persistence.PersistenceUtil;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
-public class ItemDao {
+public class ItemDao implements ItemDaoInterface{
 
     public void createItem(Item item){
         PersistenceUtil.persist(item);
     }
 
-    public static List<Item> findAllItems() {
+    public List<Item> findAllItems() {
         EntityManager em = persistence.PersistenceUtil.createEM();
         List<Item> items = (List<Item>)
                 em.createNamedQuery("Item.findAll").getResultList();
