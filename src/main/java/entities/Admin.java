@@ -13,6 +13,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 public class Admin {
 
+    //create an object of SingleObject
+    private static Admin instance = new Admin();
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -20,8 +23,11 @@ public class Admin {
     private String usernameAdmin;
     private String passwordAdmin;
 
-    public Admin(){
+    private Admin(){
+    }
 
+    public static  Admin getInstance(){
+        return instance;
     }
 
     public Admin(String usernameAdmin, String passwordAdmin) {

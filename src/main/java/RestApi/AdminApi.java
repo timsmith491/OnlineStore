@@ -15,8 +15,10 @@ import java.util.List;
 @Path("/admin")
 public class AdminApi {
 
+
 //    CustomerDao customerDao = new CustomerDao();
-    private AdminDao adminDao = new AdminDao();
+     AdminDao adminDao = new AdminDao();
+//    private AdminApi(){}
 
 
     @GET
@@ -30,7 +32,9 @@ public class AdminApi {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/addAdmin")
     public Admin addAdmin(String adminJson) {
-        Admin admin = null;
+
+        Admin admin = Admin.getInstance();
+
         try {
             admin = mapAdmin(adminJson);
         } catch (IOException e) {

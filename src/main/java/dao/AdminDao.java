@@ -12,17 +12,6 @@ import java.util.List;
  */
 public class AdminDao {
 
-    ////////////////////////////Singleton
-    private static AdminDao instance;
-
-    private AdminDao(){}
-
-    public static AdminDao getInstance(){
-        if(instance == null){
-            instance = new AdminDao();
-        }
-        return instance;
-    }/////////////////////////////
 
     public void createAdmin(Admin admin){
         PersistenceUtil.persist(admin);
