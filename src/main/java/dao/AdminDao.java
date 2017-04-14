@@ -11,6 +11,16 @@ import java.util.List;
  * Created by Tim on 19/03/2017.
  */
 public class AdminDao {
+
+    private static AdminDao instance = new AdminDao();
+
+    private AdminDao(){}
+
+    //Get the only object available
+    public static AdminDao getInstance(){
+        return instance;
+    }
+
     public void createAdmin(Admin admin){
         PersistenceUtil.persist(admin);
     }

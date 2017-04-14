@@ -13,6 +13,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 public class Admin {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -21,8 +23,8 @@ public class Admin {
     private String passwordAdmin;
 
     public Admin(){
-
     }
+
 
     public Admin(String usernameAdmin, String passwordAdmin) {
         this.usernameAdmin = usernameAdmin;
