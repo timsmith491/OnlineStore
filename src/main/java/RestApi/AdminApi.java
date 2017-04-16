@@ -18,14 +18,14 @@ public class AdminApi {
 
 
 //     AdminDao adminDao = new AdminDao();
-    AdminDao adminDao = AdminDao.getInstance();
+   // AdminDao adminDao = AdminDao.getInstance();
 
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/all")
     public List<Admin> findAllAdmins(){
-       return adminDao.findAllAdmins();
+       return AdminDao.getInstance().findAllAdmins();
     }
 
     @POST
@@ -43,7 +43,7 @@ public class AdminApi {
         }
 
         //Should form values be taken as strings for all??
-        adminDao.createAdmin(admin);
+        AdminDao.getInstance().createAdmin(admin);
         return admin;
     }
 
@@ -59,7 +59,7 @@ public class AdminApi {
             e.printStackTrace();
         }
         assert admin != null;
-        Admin a =adminDao.findByUserName(admin.getUsernameAdmin());
+        Admin a =AdminDao.getInstance().findByUserName(admin.getUsernameAdmin());
         if(admin.getPasswordAdmin().equals(a.getPasswordAdmin()))
             return admin;
         else

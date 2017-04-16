@@ -1,7 +1,20 @@
 package factory;
 
-/**
- * Created by Tim on 13/04/2017.
- */
+import dao.CartDao;
+import entities.CartItem;
+import interfaces.CartDaoInterface;
+
 public class CartItemFactory {
+
+    public CartDaoInterface getCartDao(String cartType){
+
+        if(cartType == null) {
+            return null;
+        }
+        if(cartType.equalsIgnoreCase("CartItem")) {
+            return new CartDao();
+        }
+
+        return null;
+    }
 }
